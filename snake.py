@@ -457,7 +457,7 @@ class Menu:
         self.menu.goto(300,315)
         self.menu.pendown()
         self.menu.color("blue")
-        self.menu.write("****************SNAKE GAME**************** \n--------------------------------------------------------- \n                       Select a speed: \n                       1: slow \n                       2: medium \n                       3:fast \n \n \n -press 'p' at anytime to pause or unpause- \n -press 'x' at anytime to change your color- \n       -Made with love by Gresh Basic-", False, align ="center", font=("arial", 25, "normal"))
+        self.menu.write("****************SNAKE GAME**************** \n--------------------------------------------------------- \n                       Select a speed: \n                       1: slow \n                       2: medium \n                       3:fast \n \n \n -press 'p' at anytime to pause or unpause- \n -press 'x' at anytime to change your color- \n               -Made with love by LIN-", False, align ="center", font=("arial", 25, "normal"))
 
         self.menu.penup()
         turtle.onkeypress(self.slow, '1')
