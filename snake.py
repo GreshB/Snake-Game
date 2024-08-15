@@ -2,6 +2,7 @@ import turtle, random
 foodbit = turtle.Turtle()
 score = 0
 pcount = 0
+
 '''
 implemented 1,2,3,4,5,6, and 7:
 (score output, full functioning pause and unpause option, the ability to choose if the player wants an enemy snake or not, 
