@@ -46,7 +46,7 @@ class Food:
             segx.append(segments[i].xcor())
             segy.append(segments[i].ycor())
         
-        while free == True:
+        while free:
             self.x = 15 + 30*random.randint(0,19)
             self.y = 15 + 30*random.randint(0,19)
             for i in range(len(segx)):
@@ -86,7 +86,7 @@ class Enemy:
     '''
     def __init__(self, x, y, color, rival):
         self.rival = rival
-        if self.rival == True:
+        if self.rival:
             self.alive = True
             self.x = x
             self.y = y
@@ -98,7 +98,7 @@ class Enemy:
             self.p_count = 0
 
     def grow(self):
-        if self.rival == True:
+        if self.rival:
             head = turtle.Turtle()
             head.speed(0)
             head.fillcolor(self.color)
@@ -112,8 +112,8 @@ class Enemy:
     def move(self, food):
         global score
 
-        if self.rival == True:
-            if pcount % 2 == 0 and self.alive != False:
+        if self.rival:
+            if pcount % 2 == 0 and self.alive:
                 if food.x < self.x and abs(self.x - food.x) >= 15:
                     self.x -= 30
                 elif food.x > self.x and abs(self.x - food.x) >= 15:
@@ -309,7 +309,7 @@ class Snake:
     3: Allow the user to restart the game by pressing the 'R' key
     '''
     def restart(self):
-        if self.gameover == True:
+        if self.gameover:
             self.reset = True
             turtle.undo()
             turtle.undo()
@@ -365,7 +365,7 @@ class Game:
 
     def gameloop(self):
         if (self.player).gameover == False:
-            if self.rival == True:
+            if self.rival:
                 self.enemy.move(self.food)
                 self.player.move(self.food,self.enemy.segments)
             else:
@@ -375,7 +375,7 @@ class Game:
         else:
             global score
             turtle.write(("       Game Over \n          Score: {} \n Press 'r' to try again".format(score-1)), False, align='center',font=("arial", 15, "normal"))
-            if self.rival == True:
+            if self.rival:
                 for i in range(len(self.enemy.segments)):
                     self.enemy.segments[i].setx(-1000)
             for i in range(len(self.player.segments)):
